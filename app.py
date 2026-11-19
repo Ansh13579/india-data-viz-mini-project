@@ -69,8 +69,8 @@ def main() -> None:
 
     st.subheader("Census data")
     st.dataframe(
-        data.rename(columns={"state": "State/Union Territory", **metric_labels}).sort_values(
-            "population", ascending=False
+        data.sort_values("population", ascending=False).rename(
+            columns={"state": "State/Union Territory", **metric_labels}
         ),
         use_container_width=True,
         hide_index=True,
